@@ -1,0 +1,18 @@
+<view class="container">
+  <button bindtap="startSelling">开始出售</button>
+
+  <view class="sell-form" wx:if="{{showSellForm}}">
+    <input placeholder="书名" bindinput="onBookNameInput" value="{{bookName}}" />
+    <picker mode="selector" range="{{majors}}" bindchange="onMajorSelect">
+      <view>选择专业: {{selectedSellMajor || '请选择'}}</view>
+    </picker>
+    <input placeholder="价格（元）" type="number" bindinput="onPriceInput" value="{{sellPrice}}" />
+    <view class="image-preview">
+      <block wx:for="{{tempImageUrls}}" wx:key="index">
+        <image src="{{item}}" mode="aspectFill" bindtap="removeImage" data-index="{{index}}"></image>
+      </block>
+    </view>
+    <button bindtap="submitSellForm">提交</button>
+    <button bindtap="closeSellForm">取消</button>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<view class="order-list">
+  <block wx:for="{{orders}}" wx:key="id">
+    <view class="order-item">
+      <text>订单号：{{item.orderId}}</text>
+      <text>金额：{{item.price}}元</text>
+      <text>状态：{{item.status}}</text>
+    </view>
+  </block>
+</view>

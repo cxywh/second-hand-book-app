@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="messages">
+    <view wx:for="{{messages}}" wx:key="timestamp" class="message {{item.sender === 'buyer' ? 'buyer' : 'seller'}}">
+      <view class="content">{{item.content}}</view>
+      <view class="timestamp">{{item.timestamp}}</view>
+    </view>
+  </view>
+  <view class="input-box">
+    <input placeholder="输入消息" bindinput="onInput" value="{{inputValue}}" />
+    <button bindtap="sendMessage">发送</button>
+  </view>
+</view>

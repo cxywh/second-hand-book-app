@@ -1,0 +1,39 @@
+<!-- pages/login/login.wxml -->
+<view class="container">
+  <!-- 手机号输入 -->
+  <view class="form-item">
+    <text>手机号：</text>
+    <input 
+      type="number" 
+      placeholder="请输入手机号" 
+      bindinput="onPhoneInput" 
+      value="{{phone}}" 
+    />
+  </view>
+
+  <!-- 密码输入 -->
+  <view class="form-item">
+    <text>密码：</text>
+    <input 
+      type="password" 
+      placeholder="请输入密码" 
+      bindinput="onPasswordInput" 
+      value="{{password}}" 
+    />
+  </view>
+
+  <!-- 记住登录状态 -->
+  <view class="form-item">
+    <checkbox checked="{{rememberMe}}" bindchange="onRememberMeChange" />
+    <text>下次自动登录</text>
+  </view>
+
+  <!-- 登录按钮 -->
+  <button bindtap="login">登录</button>
+
+  <!-- 跳转到注册页面 -->
+  <view class="tip-box">
+    <text>没有账号？</text>
+    <navigator url="/pages/register/register" open-type="navigate">立即注册</navigator>
+  </view>
+</view>

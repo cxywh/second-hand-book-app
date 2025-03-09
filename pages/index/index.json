@@ -1,0 +1,9 @@
+
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "教材交易平台",
+  "navigationBarBackgroundColor": "#007AFF",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#f8f8f8",
+  "enablePullDownRefresh": false
+}

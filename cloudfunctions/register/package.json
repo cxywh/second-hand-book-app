@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "wx-server-sdk": "^3.0.1"
+  }
+}

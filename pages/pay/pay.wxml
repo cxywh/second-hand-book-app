@@ -1,0 +1,31 @@
+<view class="container">
+  <!-- 图片轮播区域 -->
+  <swiper class="swiper-container" autoplay interval="3000" circular>
+    <swiper-item wx:for="{{book.images}}" wx:key="*this">
+      <image src="{{item}}" mode="aspectFill" class="book-image"/>
+    </swiper-item>
+  </swiper>
+
+  <!-- 书籍信息展示 -->
+  <view class="book-info">
+    <text class="title">{{book.title}}</text>
+    <text class="author">作者：{{book.author}}</text>
+    <text class="price">价格：¥{{book.displayPrice}}</text>
+  </view>
+
+  <!-- 卖家信息展示 -->
+  <view class="seller-info">
+    <text class="seller-label">卖家手机号：</text>
+    <text class="seller-phone">{{sellerPhone}}</text>
+  </view>
+
+  <!-- 支付按钮 -->
+  <view class="footer">
+    <button class="pay-btn" bindtap="startPayment">同意，并付款</button>
+  </view>
+
+  <!-- 与卖家沟通按钮 -->
+  <view class="chat-container">
+    <button class="chat-btn" bindtap="navigateToChat">与卖家沟通</button>
+  </view>
+</view>

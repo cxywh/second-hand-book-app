@@ -1,0 +1,40 @@
+<!-- pages/user/user.wxml -->
+<view class="container">
+  <!-- 用户信息 -->
+  <view wx:if="{{isLoggedIn}}" class="user-info">
+    <image src="{{userInfo.avatarUrl}}" class="avatar" />
+    <text class="nickname">{{userInfo.nickName}}</text>
+  </view>
+
+  <!-- 登录按钮 -->
+  <button wx:if="{{!isLoggedIn}}" class="login-btn" bindtap="navigateToLogin">登录</button>
+
+  <!-- 退出登录按钮 -->
+  <button wx:if="{{isLoggedIn}}" class="logout-btn" bindtap="logout">退出登录</button>
+
+  <!-- 消息栏 -->
+  <view wx:if="{{isLoggedIn}}" class="message-box" bindtap="checkLoginBeforeNavigate">
+    <text>消息</text>
+    <view wx:if="{{unreadCount > 0}}" class="unread-badge">{{unreadCount}}</view>
+  </view>
+
+  <!-- 提示框 -->
+  <view wx:if="{{!isLoggedIn}}" class="tip-box">
+    <text class="tip-text">请务必先点击上方登录按钮\n登录后再操作下方功能</text>
+  </view>
+
+  <!-- 底部功能按钮 -->
+  <view class="bottom-buttons">
+    <view class="func-btn" bindtap="navigateToOrders">
+      <image src="/images/order.png" class="btn-icon" />
+      <text>我的订单</text>
+    </view>
+    <view class="func-btn" bindtap="navigateToSell">
+      <image src="/images/sell.png" class="btn-icon" />
+      <text>出售商品</text>
+    </view>
+  </view>
+</view>
+    
+ 
+  

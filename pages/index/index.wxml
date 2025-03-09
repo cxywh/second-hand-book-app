@@ -1,0 +1,41 @@
+<!-- pages/index/index.wxml -->
+<!-- 顶部导航 -->
+
+
+<!-- 搜索区域 -->
+<view class="search-box">
+  <input
+    placeholder="输入书名搜索"
+    bindinput="onSearchInput"
+    value="{{searchKeyword}}"
+  />
+</view>
+
+<!-- 专业筛选 -->
+<view class="filter">
+  <picker
+    mode="selector"
+    range="{{majors}}"
+    bindchange="onMajorChange"
+  >
+    <button>选择专业: {{selectedMajor || '全部'}}</button>
+  </picker>
+</view>
+
+<!-- 书籍列表 -->
+<scroll-view scroll-y class="book-list">
+  <block wx:for="{{books}}" wx:key="_id">
+    <view class="book-item" bindtap="navigateToPay" data-book-id="{{item._id}}">
+      <swiper autoplay interval="3000" circular>
+        <swiper-item wx:for="{{item.images}}" wx:key="*this">
+          <image src="{{item}}" mode="aspectFill" />
+        </swiper-item>
+      </swiper>
+      <view class="book-info">
+        <text class="title">{{item.title}}</text>
+        <text class="price">¥{{item.displayPrice}}</text>
+        <text class="major">{{item.major}}</text>
+      </view>
+    </view>
+  </block>
+</scroll-view>

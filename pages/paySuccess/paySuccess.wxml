@@ -1,0 +1,36 @@
+<!-- pages/paySuccess/paySuccess.wxml -->
+<view class="container">
+  <!-- 支付成功提示 -->
+  <view class="success-message">
+    <image src="/images/success-icon.png" mode="widthFix" class="icon" />
+    <text class="title">支付成功！</text>
+  </view>
+
+  <!-- 订单信息 -->
+  <view class="order-info">
+    <view class="info-item">
+      <text>订单号：</text>
+      <text>{{orderId}}</text>
+    </view>
+    <view class="info-item">
+      <text>支付金额：</text>
+      <text class="amount">￥{{amount}}</text>
+    </view>
+    <view class="info-item">
+      <text>支付时间：</text>
+      <text>{{paymentTime}}</text>
+    </view>
+  </view>
+
+  <!-- 书籍信息（可选） -->
+  <view wx:if="{{bookInfo}}" class="book-info">
+    <image src="{{bookInfo.cover}}" mode="aspectFit" class="book-cover" />
+    <text class="book-title">{{bookInfo.title}}</text>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-buttons">
+    <button type="primary" bindtap="navigateToHome">返回首页</button>
+    <button bindtap="navigateToOrders">查看订单</button>
+  </view>
+</view>

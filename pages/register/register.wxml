@@ -1,0 +1,33 @@
+<!-- pages/register/register.wxml -->
+<view class="container">
+  <!-- 手机号输入 -->
+  <view class="form-item">
+    <text>手机号：</text>
+    <input 
+      type="number" 
+      placeholder="请输入手机号" 
+      bindinput="onPhoneInput" 
+      value="{{phone}}" 
+    />
+  </view>
+
+  <!-- 密码输入 -->
+  <view class="form-item">
+    <text>密码：</text>
+    <input 
+      type="password" 
+      placeholder="请输入密码" 
+      bindinput="onPasswordInput" 
+      value="{{password}}" 
+    />
+  </view>
+
+  <!-- 注册按钮 -->
+  <button bindtap="register">注册</button>
+
+  <!-- 跳转到登录页面 -->
+  <view class="tip-box">
+    <text>已有账号？</text>
+    <navigator url="/pages/login/login" open-type="navigate">去登录</navigator>
+  </view>
+</view>
